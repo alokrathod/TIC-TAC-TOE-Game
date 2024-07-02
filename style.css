@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #548687;
+    text-align: center;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5vmin;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 2vmin;
+    border: none;
+    background-color: #ffffc7;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    font-size: 8vmin;
+    color: #b0413e;
+    transition: background-color 0.15s;
+}
+
+.box:hover {
+    background-color: rgb(216, 216, 216);
+    cursor: pointer;
+}
+
+h1 {
+    padding-top: 5vmin;
+}
+
+.buttons {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    transition: opacity 0.15s;
+}
+
+.buttons:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.buttons:active {
+    opacity: 0.7;
+}
+
+.reset-button {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: white;
+    border-radius: 1rem;
+    border: none;
+    transition: opacity 0.15s;
+}
+
+.reset-button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.reset-button:active {
+    opacity: 0.7;
+}
+
+.hide-reset {
+    display: none;
+}
+
+.hide-back {
+    display: none;
+}
+
+#msg {
+    color: #ffffc7;
+    font-size: 5vmin;
+}
+
+.msg-container {
+    height: 100vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4vmin;
+}
+
+.hide {
+    display: none;
+}
+
+.hideMain {
+    display: none;
+}
+
+.btn-section {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
