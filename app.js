@@ -25,8 +25,16 @@ let backBtn = document.querySelector("#back-btn");
 // select the first playing member
 let turnX =  true;
 
-// initiate a counter in case of draw
+// initiate the counter in case of draw
 let count = 0;
+
+// initiate a scores
+let Xscore = 0;
+let Oscore = 0;
+
+// access the scores
+let scoreX = document.querySelector("#px-score");
+let scoreO = document.querySelector("#po-score");
 
 // access to the msg-container
 let msgContainer = document.querySelector(".msg-container");
@@ -52,6 +60,11 @@ const winPatterns = [
 const resetGame = () => {
     turnX = true;
     count = 0;
+    // score to be restarted from 0
+    Xscore = 0;
+    scoreX.innerText = Xscore;
+    Oscore = 0;
+    scoreO.innerText = Oscore;
     enableBoxes();
     // after the game resets hide the winner message
     msgContainer.classList.add("hide");
@@ -115,7 +128,7 @@ boxes.forEach((box) => {
 
 // function for game draw
 const gameDraw = () => {
-    msg.innerText = `Game was a "Draw"`;
+    msg.innerText = `Game was "Draw"`;
     msgContainer.classList.remove("hide");
     disableBoxes();
 }
@@ -161,8 +174,17 @@ const checkWinner = () => {
         if(pos1Val != "" && pos2Val != "" && pos3Val != "") {
             // if its not empty check if the stored values are equal throughout the line
             if(pos1Val === pos2Val && pos2Val === pos3Val) {
+                if(pos1Val === "X") {
+                    Xscore++;
+                    scoreX.innerText = Xscore;
+                }
+                else if(pos1Val === "O") {
+                    Oscore++;
+                    scoreO.innerText = Oscore;
+                }
                 // function of showWinner is called here
                 showWinner(pos1Val);
+                
                 return true;
             }
         }

@@ -41,12 +41,20 @@ body {
 }
 
 .box:hover {
-    background-color: rgb(216, 216, 216);
     cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.25s;
 }
 
-h1 {
-    padding-top: 5vmin;
+.heading {
+    background-color: #b0413e;
+    height: 5rem;
+}
+
+.title {
+    line-height: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 .buttons {
@@ -122,4 +130,27 @@ h1 {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#px-score, #po-score {
+    font-size: 4rem;
+}
+
+#px, #po {
+    font-size: 2rem;
+}
+
+.containerScore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    min-width: 300px;
 }

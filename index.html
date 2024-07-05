@@ -15,19 +15,33 @@
           <button id="view-btn" class="buttons">View Last Game</button>
         </div>
     </div>
+    <nav class="heading">
+        <p class="title">Tic Tac Toe</p>
+    </nav>
     <main class="hideMain">
-        <h1>Tic Tac Toe</h1>
-        <div class="container">
-            <div class="game">
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
+        <div class="containerScore">
+            <div class="container">
+                <div class="game">
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                    <button class="box"></button>
+                </div>
+            </div>
+            <div class="score">
+                <div class="x-score">
+                    <p id="px-score">0</p>
+                    <p id="px">Player X</p>
+                </div>
+                <div class="o-score">
+                    <p id="po-score">0</p>
+                    <p id="po">Player O</p>
+                </div>
             </div>
         </div>
         <button id="reset-btn" class="reset-button hide-reset">Reset Game</button>
