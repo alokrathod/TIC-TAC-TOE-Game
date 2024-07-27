@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-Tac-Toe Game</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="logo.webp" type="image/x-icon">
   </head>
   <body>
     <div class="msg-container hide">
@@ -20,6 +19,17 @@
     </nav>
     <main class="hideMain">
         <div class="containerScore">
+            <div class="score">
+                <div class="score-container">
+                    <div class="x-score">
+                        <p id="px-score">0</p>
+                        <p id="px">Player X</p>
+                    </div>
+                    <div class="hide-px">
+                        <p class="textx">Player X's turn</p>
+                    </div>
+                </div>
+            </div>
             <div class="container">
                 <div class="game">
                     <button class="box"></button>
@@ -34,17 +44,24 @@
                 </div>
             </div>
             <div class="score">
-                <div class="x-score">
-                    <p id="px-score">0</p>
-                    <p id="px">Player X</p>
-                </div>
-                <div class="o-score">
-                    <p id="po-score">0</p>
-                    <p id="po">Player O</p>
+                <div class="score-container">
+                    <div class="o-score">
+                        <p id="po-score">0</p>
+                        <p id="po">Player O</p>
+                    </div>
+                    <div class="hide-po">
+                        <p class="texto">Player O's turn</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <button id="reset-btn" class="reset-button hide-reset">Reset Game</button>
+        <div class="btns">
+            <div class="resets">
+                <button id="rstscore-btn" class="reset-button hide-reset">Reset Scores</button>
+                <button id="rstgame-btn" class="reset-button hide-reset">Reset Game</button>
+            </div>
+        </div>
+        
         <button id="back-btn" class="buttons hide-back">Go Back</button>
     </main>
     <script src="app.js"></script>

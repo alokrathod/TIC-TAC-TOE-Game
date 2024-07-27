@@ -8,10 +8,16 @@ main.classList.remove("hideMain");
 let boxes = document.querySelectorAll(".box");
 
 // access to the reset button
-let resetBtn = document.querySelector("#reset-btn");
+let resetScoreBtn = document.querySelector("#rstscore-btn");
 
 // in the beginning remove the hide property of the hide button
-resetBtn.classList.remove("hide-reset");
+resetScoreBtn.classList.remove("hide-reset");
+
+// access to the reset game button
+let resetGameBtn = document.querySelector("#rstgame-btn");
+
+// in the beginning remove the hide property of the hide button
+resetGameBtn.classList.remove("hide-reset");
 
 // access to the new game button
 let newBtn = document.querySelector("#new-btn");
@@ -21,6 +27,15 @@ let viewBtn = document.querySelector("#view-btn");
 
 // access to go back button
 let backBtn = document.querySelector("#back-btn");
+
+// access the text for player X
+let textX = document.querySelector(".hide-px");
+
+// first in the beginning remove the hide property from playerX
+textX.classList.remove("hide-px");
+
+// access the text for player O
+let textO = document.querySelector(".hide-po");
 
 // select the first playing member
 let turnX =  true;
@@ -57,7 +72,7 @@ const winPatterns = [
 
 
 // function to reset the game
-const resetGame = () => {
+const resetScores = () => {
     turnX = true;
     count = 0;
     // score to be restarted from 0
@@ -74,6 +89,20 @@ const resetGame = () => {
 
     // hide the go back button
     backBtn.classList.add("hide-back");
+
+    textO.classList.add("hide-po");
+    textX.classList.remove("hide-px");
+}
+
+// function to reset the current game
+const resetGame = () => {
+    turnX = true;
+    enableBoxes();
+    msgContainer.classList.add("hide");
+    main.classList.remove("hideMain");
+    backBtn.classList.add("hide-back");
+    textO.classList.add("hide-po");
+    textX.classList.remove("hide-px");
 }
 
 // function to view the last played game
@@ -85,7 +114,12 @@ const viewGame = () => {
     // show the go back button
     backBtn.classList.remove("hide-back");
     // hide the reset button
-    resetBtn.classList.add("hide-reset");
+    resetScoreBtn.classList.add("hide-reset");
+    // hide the reset game button
+    resetGameBtn.classList.add("hide-reset");
+
+    textO.classList.add("hide-po");
+    textX.classList.add("hide-px");
 }
 
 // function to start a new game after winning thel ast game
@@ -96,7 +130,11 @@ const newGame = () => {
     msgContainer.classList.add("hide");
     main.classList.remove("hideMain");
     backBtn.classList.add("hide-back");
-    resetBtn.classList.remove("hide-reset");
+    resetScoreBtn.classList.remove("hide-reset");
+    resetGameBtn.classList.remove("hide-reset");
+    
+    textO.classList.add("hide-po");
+    textX.classList.remove("hide-px");
 }
 
 // after clicking the box something should happen so we use '.forEach' inside that we make a function to make that thing happen
@@ -104,11 +142,15 @@ boxes.forEach((box) => {
     box.addEventListener("click", () => {
         // if turnX is true then on clicking the box we print X on it (X player's chance)
         if(turnX) {
+            textO.classList.remove("hide-po");
+            textX.classList.add("hide-px");
             box.innerText = "X";
             turnX = false;
         }
         // if turnX is false then on clicking the box we print O on it (O player's chance)
         else {
+            textX.classList.remove("hide-px");
+            textO.classList.add("hide-po");
             box.innerText = "O";
             turnX = true;
         }
@@ -200,11 +242,14 @@ const goBack = () => {
 // when the new game button is clicked it calls the resetGame function
 newBtn.addEventListener("click", newGame);
 
-// when the reset game button is clicked it calls the resetGame function
-resetBtn.addEventListener("click", resetGame);
+// when the reset scores button is clicked it calls the resetScores function
+resetScoreBtn.addEventListener("click", resetScores);
 
 // after winning the if we want to see the game box
 viewBtn.addEventListener("click", viewGame);
 
 // after viewing the last game now we want to go back to result by clicking go back button
 backBtn.addEventListener("click", goBack);
+
+// when the reset button is clicked it calls the resetGame function
+resetGameBtn.addEventListener("click", resetGame);

@@ -135,8 +135,9 @@ body {
 .score {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    align-items: start;
+    height: 60vh;
+    width: 28vw;
 }
 
 #px-score, #po-score {
@@ -149,8 +150,45 @@ body {
 
 .containerScore {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 5rem;
     min-width: 300px;
+}
+
+.resets {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30vw;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.score-container p {
+    font-size: 2rem;
+}
+
+.textx, .texto {
+    background-color: #b0413e;
+    padding: 0.8rem;
+    border-radius: 1.5rem;
+}
+
+.hide-px {
+    display: none;
+}
+
+.hide-po {
+    display: none;
 }
