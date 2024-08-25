@@ -1,6 +1,8 @@
 # TIC-TAC-TOE-Game
 Repository contains a TIC-TAC-TOE Game made of purely HTML, CSS and JAVASCRIPT
 
+You can play here - https://alokrathod.github.io/TIC-TAC-TOE-Game/
+
 It allows 2 users to play the game as opponents to each other.
 
 It also keeps the record of the score of each user.
